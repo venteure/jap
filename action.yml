@@ -1,0 +1,19 @@
+name: java-app-prop
+description: Create java application properties file
+author: Vytautas Vasiliauskas
+branding:
+  icon: 'align-left'
+  color: 'green'
+inputs:
+  path:
+    description: 'Path to the properties file.'
+    required: true
+  pair:
+    description: 'Key value pair separated with anything'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+    - ${{ inputs.pair }}
